@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<h1>Simple compass demo</h1>
+<canvas id="arrow" width="480" height="480"></canvas>
+<p id='orient'></p>
+<script type="text/javascript">
+window.addEventListener('deviceorientation', function(evt) {
+  var arrow = document.getElementById('arrow');
+  var ctx = arrow.getContext('2d');
+  ctx.clearRect(0,0,480,480);
+
+  alpha = -Math.PI *(evt.alpha/180.0);
+
+  var x1 = 240 + Math.round(240.0 * Math.sin(alpha));
+  var y1 = 240 - Math.round(240.0 * Math.cos(alpha));
+  var x2 = 240 + Math.round(10.0 * Math.sin(alpha - Math.PI/2));
+  var y2 = 240 - Math.round(10.0 * Math.cos(alpha - Math.PI/2));
+  var x3 = 240 + Math.round(10.0 * Math.sin(alpha + Math.PI/2));
+  var y3 = 240 - Math.round(10.0 * Math.cos(alpha + Math.PI/2));
+
+  ctx.beginPath();
+  ctx.moveTo(x1,y1);
+  ctx.lineTo(x2,y2);
+  ctx.lineTo(x3,y3);
+  ctx.closePath();
+  ctx.fill();
+
+  var orient = document.getElementById('orient');
+  orient.innerHTML = "(" + evt.alpha + ", " + evt.beta + ", " +
+                         evt.gamma + ")";
+}, true);
+</script>
