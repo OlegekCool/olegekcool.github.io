@@ -8,14 +8,14 @@ window.addEventListener('deviceorientation', function(evt) {
   var ctx = arrow.getContext('2d');
   ctx.clearRect(0,0,480,480);
 
-  alpha = -Math.PI *(evt.alpha/180.0);
+  gamma = -Math.PI *(evt.alpha/180.0);
 
-  var x1 = 240 + Math.round(240.0 * Math.sin(alpha));
-  var y1 = 240 - Math.round(240.0 * Math.cos(alpha));
-  var x2 = 240 + Math.round(10.0 * Math.sin(alpha - Math.PI/2));
-  var y2 = 240 - Math.round(10.0 * Math.cos(alpha - Math.PI/2));
-  var x3 = 240 + Math.round(10.0 * Math.sin(alpha + Math.PI/2));
-  var y3 = 240 - Math.round(10.0 * Math.cos(alpha + Math.PI/2));
+  var x1 = 240 + Math.round(240.0 * Math.sin(gamma));
+  var y1 = 240 - Math.round(240.0 * Math.cos(gamma));
+  var x2 = 240 + Math.round(10.0 * Math.sin(gamma - Math.PI/2));
+  var y2 = 240 - Math.round(10.0 * Math.cos(gamma - Math.PI/2));
+  var x3 = 240 + Math.round(10.0 * Math.sin(gamma + Math.PI/2));
+  var y3 = 240 - Math.round(10.0 * Math.cos(gamma + Math.PI/2));
 
   ctx.beginPath();
   ctx.moveTo(x1,y1);
