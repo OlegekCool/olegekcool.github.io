@@ -9,13 +9,13 @@
 		
 <script>
 
- let let WakeLock = null;
- WakeLock = await navigator.wakeLock.request( 'screen' );
+
  
 async function Fullscr() {
   if (!document.fullscreenElement) 
     await document.documentElement.requestFullscreen(); 
-  
+let WakeLock = null;
+ WakeLock = await navigator.wakeLock.request( 'screen' );
 }
 
 </script>
