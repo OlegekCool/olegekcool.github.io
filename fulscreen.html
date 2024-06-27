@@ -24,12 +24,10 @@ color:rgb(128, 128, 128); font-size: xx-large;">
    
    <script>
 
- let let WakeLock = null;
- WakeLock = navigator.wakeLock.request( 'screen' );
- 
+
 async function Fullscr() {
   if (!document.fullscreenElement) 
-    document.documentElement.requestFullscreen(); 
+   await document.documentElement.requestFullscreen(); 
   
 };
 
