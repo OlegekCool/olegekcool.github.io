@@ -7,18 +7,7 @@
     <meta name="viewport" content="user-scalable=no">   
 	
 		
-<script>
 
-
- 
-async function Fullscr() {
-  if (!document.fullscreenElement) 
-    await document.documentElement.requestFullscreen(); 
-let WakeLock = null;
- WakeLock = await navigator.wakeLock.request( 'screen' );
-}
-
-</script>
 
 </head>
 
@@ -50,6 +39,17 @@ color:rgb(128, 128, 128); font-size: xx-large;">
 <button style= "font-size: large" onclick="Readcord()"> 
   Считать координаты
 </button> <br/> <br/>
+
+<script>
+
+async function Fullscr() {
+  if (!document.fullscreenElement) 
+    await document.documentElement.requestFullscreen(); 
+let WakeLock = null;
+ WakeLock = await navigator.wakeLock.request( 'screen' );
+}
+
+</script>
 
 
 
